@@ -230,6 +230,9 @@
       // alert('hii')
       jQuery.ajax({
         url: 'https://script.google.com/macros/s/AKfycbw70OCBj_26cHbHKUGhkJhqUOBX7cqqKokbrpO2JOy8FxJkkatyWGoqf2xMqHbWJyNU/exec',
+        handleAs: 'json',
+        headers:{'X-Requested-With': null}, //superfluous now
+        content: {alt: 'json', access_token: params.access_token},
         type: 'post',
         data: jQuery('#frmSubmit').serialize(),
         success: function (result) {
